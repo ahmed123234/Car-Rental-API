@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: car-rental-api
+    version: 1.0.0
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/carrental
+    username: postgres
+    password: password
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+  security:
+    jwt:
+      secret: mysecretkeythatisatleast256bitslong_change_in_production
+      expiration: 3600000
+      refresh-expiration: 2592000000
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  compression:
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.carrental: DEBUG
+  file:
+    name: logs/application.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
