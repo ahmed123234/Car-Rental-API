@@ -1,0 +1,77 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.iml
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.backup
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Log files
+logs/
+*.log
+*.log.*
+
+# System
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Build
+build/
+dist/
+
+# Node (if using npm scripts)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Gradle
+.gradle/
+gradle/
+
+# SonarQube
+.sonarqube/
+.scannerwork/
+
+# JaCoCo
+coverage/
+
+# Docker
+docker-compose.override.yml
