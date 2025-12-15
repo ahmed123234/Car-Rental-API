@@ -1,0 +1,27 @@
+// ==== Application Tests ====
+package com.carrental;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@SpringBootTest
+class CarRentalApiApplicationTests {
+
+    @Autowired
+    private ApplicationContext applicationContext;
+
+    @Test
+    void contextLoads() {
+        assertThat(applicationContext).isNotNull();
+    }
+
+    @Test
+    void beansAreLoaded() {
+        String[] beanNames = applicationContext.getBeanDefinitionNames();
+        assertThat(beanNames.length).isGreaterThan(0);
+    }
+}
